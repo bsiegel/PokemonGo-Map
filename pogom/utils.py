@@ -33,7 +33,7 @@ def parse_config(args):
     args.port = Config.get('Misc', 'Port') 
     return args
 
-def get_args():
+def get_args(get_pass=False):
     # fuck PEP8
     parser = argparse.ArgumentParser()
     parser.add_argument('-se', '--settings',action='store_true',default=False)
@@ -60,7 +60,7 @@ def get_args():
     args = parser.parse_args()
     if (args.settings) :
         args = parse_config(args) 
-    elif args.password is None:
+    elif args.password is None and get_pass:
         args.password = getpass.getpass()
 
     return args

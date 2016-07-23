@@ -37,7 +37,7 @@ if __name__ == '__main__':
     logging.getLogger("pogom.pgoapi.rpc_api").setLevel(logging.INFO)
     logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
-    args = get_args()
+    args = get_args(True)
 
     if args.debug:
         logging.getLogger("requests").setLevel(logging.DEBUG)
